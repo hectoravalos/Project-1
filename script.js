@@ -2,6 +2,7 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+//An array of objects containing the five quotes.
 var quotes = [
   {
     quote: 'Yeah, you got some silverware, but really are you eating though?',
@@ -12,7 +13,9 @@ var quotes = [
   },
   {
     quote: 'Hate on success and success will hate on you.',
-    source: 'Hector "OpTic H3CZ" Rodriguez'
+    source: 'Hector "OpTic H3CZ" Rodriguez',
+    citation:'Youtube',
+    year:'2016'
   
   },
   {
@@ -23,7 +26,9 @@ var quotes = [
   },
   {
     quote: 'The only real cheerio is honey nut.',
-    source: 'Larry King'
+    source: 'Larry King',
+    citation:'Fox Sports',
+    year: '2016'
   
  
   },
@@ -43,14 +48,23 @@ var quotes = [
   }
 ];
 
-
+//Function to get random value.
 function getRandomQuote() {
+
+//Random Math function
     var theQuote = Math.floor(Math.random() * (quotes.length));
-    return[theQuote];
+   
+//Returns value given from above
+    return quotes[theQuote];
 }
 
+//Function to print quote.
 function printQuote() {
+   
+// Create variable message.
     var message;
+    
+// Calling the getRandomQuote function and storing it in a variable.
     var finalQuotePrint = getRandomQuote(quotes);
 
   message = '<p class="quote">' + finalQuotePrint.quote + '</p>'; 
@@ -58,7 +72,8 @@ function printQuote() {
   message += '<span class="citation">' + finalQuotePrint.citation + '</span>';
   message += '<span class="year">' + finalQuotePrint.year + '</span>'
   message += '</p>';
- document.getElementById('quote-box').innerHTML = message;
+
+  document.getElementById('quote-box').innerHTML = message;
 }
     
     
