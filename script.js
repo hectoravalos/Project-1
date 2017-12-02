@@ -74,7 +74,6 @@ function printQuote() {
   message += '</p>';
 
   document.getElementById('quote-box').innerHTML = message;
+
 }
-    
-    
     
